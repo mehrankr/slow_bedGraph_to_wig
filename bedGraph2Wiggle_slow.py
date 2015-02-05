@@ -19,13 +19,14 @@ def write_to_file(gz, out_file, out_wig):
     if gz:
         if "gz" not in out_file:
             out_file = out_file + '.gz'
-        out_write = gzip.open(out_file, 'wb')
+        out_write = gzip.open(out_file, 'ab')
         for each_line in out_wig:
             out_write.write(each_line)
     else:
-        out_write = open(out_file, 'w')
+        out_write = open(out_file, 'a')
         for each_line in out_wig:
             out_write.write(each_line)
+    out_write.close()
   
 line_ad = 'fixedStep chrom=chrZ start=60001 step=1\n'
 if out_file == 'Not entered':
