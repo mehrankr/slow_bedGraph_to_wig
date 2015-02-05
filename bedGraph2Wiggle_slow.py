@@ -47,7 +47,9 @@ while other_chr:
 
 print chr + " found, conversion begins"
 
-out_wig = [temp]
+st = temp.split("\t")[1]
+out_wig = ['fixedStep chrom=' + chr + " start=" + st + " step=1\n", temp]
+
 last_line = line_ad
 count = 1
 temp_count = 0
